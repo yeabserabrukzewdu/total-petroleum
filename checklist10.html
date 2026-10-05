@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>የነዳጅ ታንከር መኪና (ቦቴ) በነዳጅ ማደያ ወይም በደንበኛ ቦታ የማራገፍ ደህንነት ቼክሊስት / Fuel Tanker Truck Safe-To-Unload Checklist</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #f9f9f9; }
+    h1 { text-align: center; margin: 0; color: #333; font-size: 24px; }
+    h2 { background: #f2f2f2; padding: 10px; border-left: 5px solid #0072ce; }
+    .section { border: 1px solid #ddd; padding: 15px; margin-bottom: 20px; background: #fff; border-radius: 8px; }
+
+    /* Header with logos */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .header img { height: 80px; }
+    .header h1 { flex: 1; text-align: center; }
+
+    /* Visit Information Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      background: #fff;
+      border-radius: 8px;
+    }
+    table td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      vertical-align: top;
+    }
+    table input[type="text"], table input[type="date"] {
+      width: 95%;
+      padding: 6px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    /* Question layout */
+    .question-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: 15px;
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+    }
+    .question-text { flex: 2; font-size: 15px; color: #444; }
+    .question-text input[type="text"] {
+      margin-top: 5px;
+      width: 95%;
+      padding: 6px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .answer-options { flex: 1; text-align: right; }
+    .answer-title { font-weight: bold; margin-bottom: 5px; color: #0072ce; }
+    .tick-options { display: flex; justify-content: flex-end; gap: 20px; }
+
+    /* Custom tick/cross boxes */
+    .tick-options input[type="checkbox"] { display: none; }
+    .tick-options label {
+      width: 30px; height: 30px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      display: flex; justify-content: center; align-items: center;
+      cursor: pointer; font-size: 20px;
+      transition: all 0.3s ease;
+    }
+    .tick-options input[type="checkbox"]:checked + label.yes {
+      background: #28a745; color: #fff; border-color: #28a745;
+    }
+    .tick-options input[type="checkbox"]:checked + label.no {
+      background: #dc3545; color: #fff; border-color: #dc3545;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header with logos -->
+<div class="header">
+  <img src="image004.png" alt="Logo Left">
+  <h1>የነዳጅ ታንከር መኪና (ቦቴ) በነዳጅ ማደያ ወይም በደንበኛ
+ቦታ የማራገፍ ደህንነት ቼክሊስት<br>Fuel Tanker Truck Safe-To-Unload Checklist</h1>
+  <img src="image005.png" alt="Logo Right">
+</div>
+
+<!-- Visit Information Table -->
+<h2>የጉብኝት መረጃ / Visit Information</h2>
+<table>
+  <tr>
+    <td>የጉብኝት አይነት / Type of visit:</td>
+    <td>
+   <table>
+  <tr>
+    <td>የታቀደ / Planned</td>
+    <td><input type="checkbox"></td>
+  </tr>
+  <tr>
+    <td>ያልታቀደ / Unplanned</td>
+    <td><input type="checkbox"></td>
+  </tr>
+</table>
+
+  <tr>
+    <td>የነዳጅ ማደያ / ደንበኛ ቦታ<br>(Service station / Customer site):</td>
+    <td><input type="text" name="station_site"></td>
+  </tr>
+  <tr>
+    <td>ቀን (Date):</td>
+    <td><input type="date" name="visit_date"></td>
+  </tr>
+  <tr>
+    <td>ጎብኚው / Visitor:</td>
+    <td><input type="text" name="visitor"></td>
+  </tr>
+  <tr>
+    <td>አሽከርካሪ / Driver:</td>
+    <td><input type="text" name="driver"></td>
+  </tr>
+  <tr>
+    <td>የነዳጅ አይነት / Product type:</td>
+    <td><input type="text" name="product_type"></td>
+  </tr>
+  <tr>
+    <td>የማደያ / ደንበኛ ተወካይ<br>(Station / Customer representative):</td>
+    <td><input type="text" name="representative"></td>
+  </tr>
+  <tr>
+    <td>የመኪና ታርጋ / የተሳቢ ታርጋ<br>(Truck plate No / Trailer plate No):</td>
+    <td><input type="text" name="plate_no"></td>
+  </tr>
+</table><!-- Items to Check Table -->
+<h2>መታየት ያለባቸው ነገሮች / Items to check</h2>
+<table class="items-check">
+  <thead>
+    <tr>
+      <th>                  </th>
+      <th>አዎ / YES</th>
+      <th>አይ / NO</th>
+      <th>ማስታወሻ / Remark</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Section 1 -->
+    <tr>
+      <td colspan="4"><strong>ክፍል ፩ - ሰነዶች እና ቅድመ ማራገፍ / Section 1 - Documentation & Pre-Unloading</strong></td>
+    </tr>
+    <tr>
+      <td>1.1. ሰነዶች ቀርበዋል / Delivery documents presented?</td>
+      <td><input type="checkbox"></td>
+      <td><input type="checkbox"></td>
+      <td><input type="text" placeholder="Remarks"></td>
+    </tr>
+    <tr>
+      <td>1.2. ሰነዶቹ ከጣቢያዉ ጋር ይዛመዳሉ / Documents match delivery point?</td>
+      <td><input type="checkbox"></td>
+      <td><input type="checkbox"></td>
+      <td><input type="text" placeholder="Remarks"></td>
+    </tr>
+    <tr>
+      <td>1.3. የነዳጅ አይነት እና መጠን ተረጋግጧል / Product type and quantity confirmed?</td>
+      <td><input type="checkbox"></td>
+      <td><input type="checkbox"></td>
+      <td><input type="text" placeholder="Remarks"></td>
+    </tr>
+    <tr>
+      <td>1.4. የልኬት ሰንጠረዥ አለ / Gauge table available?</td>
+      <td><input type="checkbox"></td>
+      <td><input type="checkbox"></td>
+      <td><input type="text" placeholder="Remarks"></td>
+    </tr>
+    <tr>
+      <td>1.5. ለ 30 ደቂቃ / 30-minute wait observed?</td>
+      <td><input type="checkbox"></td>
+      <td><input type="checkbox"></td>
+      <td><input type="text" placeholder="Remarks"></td>
+    </tr>
+
+    <!-- Section 2 -->
+    <tr>
+      <td colspan="4"><strong>ክፍል ፪ - የጣቢያ እና የነዳጅ ታንከር ዝግጁነት / Section 2 - Site & Underground Tank Readiness</strong></td>
+    </tr>
+    <tr>
+      <td>2.1. ትክክለኛው ታንከር ተለይቷል / Correct receiving tank identified?</td>
+      <td><input type="checkbox"></td>
+      <td><input type="checkbox"></td>
+      <td><input type="text" placeholder="Remarks"></td>
+    </tr>
+    <tr>
+      <td>2.2. ታንከሩ በቂ ቦታ አለው / Sufficient ullage available?</td>
+      <td><input type="checkbox"></td>
+      <td><input type="checkbox"></td>
+      <td><input type="text" placeholder="Remarks"></td>
+    </tr>
+    <tr>
+      <td>2.3. የታንከሩ በቂ ቦታ በዲፕ ስቲክ ተለክቷል / Ullage verified by dipstick?</td>
+      <td><input type="checkbox"></td>
+      <td><input type="checkbox"></td>
+      <td><input type="text" placeholder="Remarks"></td>
+    </tr>
+    <tr>
+      <td>2.4. የታንከር መክፈቻዎች ዝግ ናቸው / Tank openings secured?</td>
+      <td><input type="checkbox"></td>
+      <td><input type="checkbox"></td>
+      <td><input type="text" placeholder="Remarks"></td>
+    </tr>
+<!-- Section 3 -->
+<tr>
+  <td colspan="4"><strong>ክፍል ፫ - መኪና አቀማመጥ እና ኢነርጂ መቆጣጠር / Section 3 - Vehicle Positioning and Energy Isolation</strong></td>
+</tr>
+<tr>
+  <td>3.1. መኪናው በተፈቀደ ቦታ ተቆሟል / Truck parked correctly?</td>
+  <td><input type="checkbox"></td>
+  <td><input type="checkbox"></td>
+  <td><input type="text" placeholder="Remarks"></td>
+</tr>
+<tr>
+  <td>3.2. ወደፊት ለመውጣት መንገድ ነፃ ነው / Forward emergency exit clear?</td>
+  <td><input type="checkbox"></td>
+  <td><input type="checkbox"></td>
+  <td><input type="text" placeholder="Remarks"></td>
+</tr>
+<tr>
+  <td>3.3. የእጅ ፍሬን ተይዟል / Parking brake applied?</td>
+  <td><input type="checkbox"></td>
+  <td><input type="checkbox"></td>
+  <td><input type="text" placeholder="Remarks"></td>
+</tr>
+<tr>
+  <td>3.4. የጎማ መቆሚያ /ታኮ/ ተቀምጧል / Wheel chocks installed?</td>
+  <td><input type="checkbox"></td>
+  <td><input type="checkbox"></td>
+  <td><input type="text" placeholder="Remarks"></td>
+</tr>
+<tr>
+  <td>3.5. ሞተር ጠፍቷል / Engine switched off?</td>
+  <td><input type="checkbox"></td>
+  <td><input type="checkbox"></td>
+  <td><input type="text" placeholder="Remarks"></td>
+</tr>
+<tr>
+  <td>3.6. የባትሪ ኃይል መቁረጫ ስዊች ተጥፍቷል / Battery cut-off switch off?</td>
+  <td><input type="checkbox"></td>
+  <td><input type="checkbox"></td>
+  <td><input type="text" placeholder="Remarks"></td>
+</tr>
+<tr>
+  <td>3.7. የጭስ ማውጫ ማፈኛ ተገጥሟል / Flame arrestor placed?</td>
+  <td><input type="checkbox"></td>
+  <td><input type="checkbox"></td>
+  <td><input type="text" placeholder="Remarks"></td>
+</tr>
+
+<!-- Section 4 -->
+<tr>
+  <td colspan="4"><strong>ክፍል ፬ - የደህንነት ምልክቶች እና መሣሪያዎች / Section 4 - Safety Signage and Equipment</strong></td>
+</tr>
+<tr>
+  <td>4.1. "አታጭስ" ምልክት ተቀምጧል / No smoking sign displayed?</td>
+  <td><input type="checkbox"></td>
+  <td><input type="checkbox"></td>
+  <td><input type="text" placeholder="Remarks"></td>
+</tr>
+<tr>
+  <td>4.2. “ነዳጅ በማራገፍ ላይ” ሰሌዳ አለ / Fuel unloading sign posted?</td>
+  <td><input type="checkbox"></td>
+  <td><input type="checkbox"></td>
+  <td><input type="text" placeholder="Remarks"></td>
+</tr>
+<tr>
+  <td>4.3. ሞባይል ስልኮች ጠፍተዋል / Mobile phones switched off?</td>
+  <td><input type="checkbox"></td>
+  <td><input type="checkbox"></td>
+  <td><input type="text" placeholder="Remarks"></td>
+</tr>
+<tr>
+  <td>4.4. የደሀንነት ኮኖች ተቀምጠዋል / Safety cones in place?</td>
+  <td><input type="checkbox"></td>
+  <td><input type="checkbox"></td>
+  <td><input type="text" placeholder="Remarks"></td>
+</tr>
+<tr>
+  <td>4.5. የ ኤ.ቢ.ሲ. አይነት የእሳት ማጥፊያዎች አሉ 2 x 9 ኪ.ግ / ABC type fire extinguishers available, 2 x 9kg?</td>
+  <td><input type="checkbox"></td>
+  <td><input type="checkbox"></td>
+  <td><input type="text" placeholder="Remarks"></td>
+</tr>
+<tr>
+  <td>4.6. የእሉሚኒየም ባልዲ አለ / Aluminum bucket available?</td>
+  <td><input type="checkbox"></td>
+  <td><input type="checkbox"></td>
+  <td><input type="text" placeholder="Remarks"></td>
+</tr>
+</table><!-- Items to Check Table -->
+<h2>የሚፈተሸ ጉዳይ /Inspection Item</h2>
+<table class="items-check">
+  <thead>
+    <tr>
+      <th>          </th>
+      <th>አዎ / YES</th>
+      <th>አይ / NO</th>
+      <th>ማስታወሻ / Remark</th>
+    </tr>
+  </thead>
+  <tbody>
+<!-- Section 5 -->
+<tr>
+  <td colspan="4"><strong>ክፍል ፭ - ሰራተኞችና ከአደጋ መከላከያ መሣሪያዎች / Section 5 - Personnel and PPE</strong></td>
+</tr>
+<tr>
+  <td>5.1. አሽከርካሪው የማራገፍ ደሀንነት ስልጠና አለው / Driver trained in unloading?</td>
+  <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="text" placeholder="ማስታወሻ / Remark"></td>
+</tr>
+<tr>
+  <td>5.2. የማደያ / ደንበኛ ተወካይ የማራገፍ ደሀንነት ስልጠና አለው? / Station representative trained in unloading?</td>
+  <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="text" placeholder="ማስታወሻ / Remark"></td>
+</tr>
+<tr>
+  <td>5.3. አሽከርካሪው PPE ለብሷል (ሄልሜት፣ መነጽር፣ ቱታ፣ ጓንት፣ ጫማ) / Driver wearing PPE (helmet, goggles, overall, gloves, safety shoes)?</td>
+  <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="text" placeholder="ማስታወሻ / Remark"></td>
+</tr>
+<tr>
+  <td>5.4. የማደያ / ደንበኛ ተወካይ PPE ለብሷል (ሄልሜት፣ መነጽር፣ ቱታ፣ ጓንት፣ ጫማ) / Station representative wearing PPE?</td>
+  <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="text" placeholder="ማስታወሻ / Remark"></td>
+</tr>
+
+<!-- Section 6 -->
+<tr>
+  <td colspan="4"><strong>ክፍል ፮ - ማራገፊያ ሆዝ፣ ማሳ እና ቴክኒካል ቁጥጥር / Section 6 - Hose, Grounding and Controls</strong></td>
+</tr>
+<tr>
+  <td>6.1. ማሳ (ኤሌክትሪክ ወደ መሬት ማገናኛ) ተያይዟል / Grounding cable connected?</td>
+  <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="text" placeholder="ማስታወሻ / Remark"></td>
+</tr>
+<tr>
+  <td>6.2. ማሳ ከሆዝ በፊት ተያይዟል / Grounding done before hose connection?</td>
+  <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="text" placeholder="ማስታወሻ / Remark"></td>
+</tr>
+<tr>
+  <td>6.3. ሆዙ ጥራቱ ጥሩን የጠበቀ ነው / Hose in good condition?</td>
+  <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="text" placeholder="ማስታወሻ / Remark"></td>
+</tr>
+<tr>
+  <td>6.4. ሆዙ ከመኪና ስር አያልፍም / Hose does not run under vehicle?</td>
+  <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="text" placeholder="ማስታወሻ / Remark"></td>
+</tr>
+<tr>
+  <td>6.5. መደገፊያዎች ተዘርግተው ተቆልፈዋል / Double handrail deployed and locked?</td>
+  <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="text" placeholder="ማስታወሻ / Remark"></td>
+</tr>
+<tr>
+  <td>6.6. የኤር ብሬክ ቫልቭ ሙሉ ጭነት ላይ ነው / Trailer brake valve set at full load?</td>
+  <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="text" placeholder="ማስታወሻ / Remark"></td>
+</tr>
+
+<!-- Section 7 -->
+<tr>
+  <td colspan="4"><strong>ክፍል ፯ - የማራገፍ ሂደት ክትትል / Section 7 - Unloading Monitoring</strong></td>
+</tr>
+<tr>
+  <td>7.1. በአንድ ጊዜ አንድ ነዳጅ ብቻ ይራገፋል / Unloading one product at a time?</td>
+  <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="text" placeholder="ማስታወሻ / Remark"></td>
+</tr>
+<tr>
+  <td>7.2. አሽከርካሪው በአቅራቢያ ነው / Driver remains near the vehicle?</td>
+  <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="text" placeholder="ማስታወሻ / Remark"></td>
+</tr>
+<tr>
+  <td>7.3. የማደያ / ደንበኛ ተወካይ በአቅራቢያ ነው / Station representative remains near the vehicle?</td>
+  <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="text" placeholder="ማስታወሻ / Remark"></td>
+</tr>
+<tr>
+  <td>7.4. ማንጠባጠብ ወይም ፍሰስ አልታየም / No leaks or spills?</td>
+  <td><input type="checkbox"></td><td><input type="checkbox"></td><td><input type="text" placeholder="ማስታወሻ / Remark"></td>
+</tr>
+
+<!-- Section 8 -->
+<tr>
+  <td colspan="4"><strong>ክፍል ፰ - ከማራገፍ በኋላ / Section 8 - Post-Unloading</strong></td>
+</tr>
+<tr>
+ <tr>
+  <td>8.1. ሆዞች በትክክል ተለይተዋል / Hoses disconnected correctly?</td>
+  <td><input type="checkbox"></td>
+  <td><input type="checkbox"></td>
+  <td><input type="text" placeholder="ማስታወሻ / Remark"></td>
+</tr>
+<tr>
+  <td>8.2. ማሳ (ኤሌክትሪክ ወደ መሬት ማገናኛ) በመጨረሻ ተለይቷል / Grounding removed last?</td>
+  <td><input type="checkbox"></td>
+  <td><input type="checkbox"></td>
+  <td><input type="text" placeholder="ማስታወሻ / Remark"></td>
+</tr>
+<tr>
+  <td>8.3. የማራገፍ ቦታ ተጠርጎ ተነጻ / Unloading area cleaned?</td>
+  <td><input type="checkbox"></td>
+  <td><input type="checkbox"></td>
+  <td><input type="text" placeholder="ማስታወሻ / Remark"></td>
+</tr>
+<tr>
+  <td>8.4. ሰነዶች ተፈርመዋል / Documents signed?</td>
+  <td><input type="checkbox"></td>
+  <td><input type="checkbox"></td>
+  <td><input type="text" placeholder="ማስታወሻ / Remark"></td>
+</tr>
+<!-- Station/Customer Representative Remarks -->
+<tr>
+  <td colspan="4"><strong>የባለማደያ / የደንበኛ ተወካይ አስተያየት / Station/ Customer Representative's Remarks</strong></td>
+</tr>
+<tr>
+  <td colspan="4"><textarea placeholder="አስተያየት / Remarks"></textarea></td>
+</tr>
+<tr>
+  <td colspan="2">ፊርማ / Signature: <input type="text" placeholder="Signature"></td>
+  <td colspan="2">ቀን / Date: <input type="date"></td>
+</tr>
+
+<!-- Driver Remarks -->
+<tr>
+  <td colspan="4"><strong>የአሽከርካሪ አስተያየት / Driver's Remarks</strong></td>
+</tr>
+<tr>
+  <td colspan="4"><textarea placeholder="አስተያየት / Remarks"></textarea></td>
+</tr>
+<tr>
+  <td colspan="2">ፊርማ / Signature: <input type="text" placeholder="Signature"></td>
+  <td colspan="2">ቀን / Date: <input type="date"></td>
+</tr>
+
+<!-- Visitor Remarks -->
+<tr>
+  <td colspan="4"><strong>የጎብኚው አስተያየት / Visitor's Remarks</strong></td>
+</tr>
+<tr>
+  <td colspan="4"><textarea placeholder="አስተያየት / Remarks"></textarea></td>
+</tr>
+<tr>
+  <td colspan="2">ፊርማ / Signature: <input type="text" placeholder="Signature"></td>
+  <td colspan="2">ቀን / Date: <input type="date"></td>
+</tr>
+<!-- Section 9 - Responsibility Matrix/ -->
+  <table>
+    <thead>
+      <tr>
+        <th>ተግባር / Activity</th>
+        <th>አሽከርካሪ / Driver</th>
+        <th>ተቀባይ / Receiver</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ሰነዶች ማቅረብ / Document presentation</td>
+        <td>ኃላፊ / Responsible</td>
+        <td>ያማክራል / Consulted</td>
+      </tr>
+      <tr>
+        <td>የታንከር ጭነት ማረጋገጥ / Tank ullage check</td>
+        <td>ያማክራል / Consulted</td>
+        <td>ኃላፊ / Responsible</td>
+      </tr>
+      <tr>
+        <td>ማሳ ማድረግ (ኤሌክትሪክ ወደ መሬት ማገናኘት) / Grounding</td>
+        <td>ኃላፊ / Responsible</td>
+        <td>ኃላፊ / Responsible</td>
+      </tr>
+      <tr>
+        <td>የማራገፍ ስራው / Unloading operation</td>
+        <td>ኃላፊ / Responsible</td>
+        <td>ኃላፊ / Responsible</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- Submit & Export Section -->
+<div class="submit-section">
+  <button class="submit-btn">✔ Save & Submit</button>
+  
+  <div class="export-icons">
+    <a href="https://docs.google.com/spreadsheets/" target="_blank" title="Export to Google Sheets">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlesheets.svg" alt="Google Sheets" class="icon">
+    </a>
+    <a href="https://www.microsoft.com/en-us/microsoft-365/excel" target="_blank" title="Export to Excel">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/microsoftexcel.svg" alt="Excel" class="icon">
+    </a>
+    <a href="https://www.adobe.com/acrobat/pdf.html" target="_blank" title="Export to PDF">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/adobeacrobatreader.svg" alt="PDF" class="icon">
+    </a>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <p class="company-name">Gulelle Medhanialem Total Energies</p>
+    <p class="developer">Developed by Gulelle Medhanialem Total Energies Managing team</p>
+  </div>
+</footer>
+
+<style>
+  .submit-section {
+    text-align: center;
+    margin-top: 40px;
+  }
+  .submit-btn {
+    background: linear-gradient(135deg, #0072ce, #005bb5);
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+  }
+  .submit-btn:hover {
+    background: linear-gradient(135deg, #005bb5, #003f80);
+    transform: scale(1.05);
+  }
+  .export-icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+  }
+  .export-icons .icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  .export-icons .icon:hover {
+    transform: scale(1.2);
+  }
+  .footer {
+    background: #0072ce;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    border-radius: 8px;
+  }
+  .footer .company-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px 0;
+  }
+  .footer .developer {
+    font-size: 12px;
+    font-style: italic;
+    margin: 0;
+    color: #f2f2f2;
+  }
+</style>
